@@ -31,3 +31,5 @@ router.post('/signup', (request, response) => {})
 
 // Get user information for Id
 router.get('/:id', async (request, response) => {})
+
+module.exports = router;
