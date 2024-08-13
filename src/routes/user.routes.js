@@ -1,4 +1,5 @@
 const express = require('express');
+const createError = require('http-errors'); 
 
 const userUseCases = require('../usecases/user.usecases');
 
@@ -46,18 +47,18 @@ router.post('/signup', async (request, response) => {
   }
 });
 
-// Get user information for Id
+//Get user information for Id
 router.get('/:id', async (request, response) => {
   try {
     const id = request.params.id;
-    const user = await userUseCases.getUserById(id);
+    const user = await userUseCases.getById(id);
 
     if (!user) {
-      throw createHttpError(404, 'User not found');
+      throw createError(404, 'User not found');
     }
     response.json({
       success: true,
-      message: 'User found',
+      message: 'User found by Id',
       data: { user },
     });
 
@@ -69,5 +70,6 @@ router.get('/:id', async (request, response) => {
     });
   }
 });
+
 
 module.exports = router;

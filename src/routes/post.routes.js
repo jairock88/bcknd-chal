@@ -1,11 +1,12 @@
 const express = require('express');
 
 const postUseCases = require('../usecases/post.usecases');
+const auth = require('../middlewares/auth');
 
 const router = express.Router();
 
 // Create a new post
-router.post('/', async (request, response) => {
+router.post('/', auth, async (request, response) => {
     try {
         const data = request.body;
         const userId = request.user._id; // Almacena el ID del usuario en una constante

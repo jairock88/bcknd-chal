@@ -60,11 +60,13 @@ async function create(data) {
 // Get all Users
 async function getAllUsers() {
     const users = await User.find({});
+    return users;
 }
 
 // Get User by ID
-async function getUserById(id) {
+async function getById(id) {
     const user = await User.findById(id);
+    return user;
 }
 
 // Update User by ID
@@ -75,8 +77,8 @@ async function updateUserById(id, newData) {
         throw createError(404, 'User not found 🫤');
     }
 
-    const updateUser = await User.findByIdAndUpdate(id, newData, { new: true });
-    return updateUser;
+    const userUpdated = await User.findByIdAndUpdate(id, newData, { new: true });
+    return userUpdated;
 }
 
 // Delete User by ID
@@ -86,6 +88,7 @@ async function deleteUserById(id) {
     if (!userFound) {
         throw createError(404, 'User not found 🫤');
     }
+    
 }
 
 module.exports = {
@@ -93,7 +96,7 @@ module.exports = {
     signUp,
     create,
     getAllUsers,
-    getUserById,
+    getById,
     updateUserById,
     deleteUserById
 }
