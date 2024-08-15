@@ -115,7 +115,7 @@ router.delete('/:id', async (request, response) => {
 });
 
 // Update post by ID
-router.patch('/:id', async (request, response) => {
+router.patch('/:id', auth, async (request, response) => {
     try {
         const id = request.params.id; // ID del post que se va a actualizar
         const userId = request.user._id; // ID del usuario autenticado

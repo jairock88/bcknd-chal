@@ -22,15 +22,7 @@ const userSchema = new mongoose.Schema({
         type: 'string',
         required: true,
         minlength: 6
-    },
-    createAt: {
-        type: Date,
-        default: Date.now
-    },
-    updated_at: {
-        type: Date,
-        default: Date.now
     }
-})
+},{timestamps: true});
 
 module.exports = mongoose.model('User', userSchema);
