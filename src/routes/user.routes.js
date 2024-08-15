@@ -6,7 +6,7 @@ const userUseCases = require('../usecases/user.usecases');
 const router = express.Router();
 
 
-// Login example localhost:port/login
+// Login example localhost:port/user/login
 router.post("/login", async (request, response) => {
     try {
       const data = request.body;

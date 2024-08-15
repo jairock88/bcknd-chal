@@ -75,7 +75,7 @@ router.get('/', async (request, response) => {
 });
 
 // Delete post by ID
-router.delete('/:id', async (request, response) => {
+router.delete('/:id', auth, async (request, response) => {
     try {
         const id = request.params.id; // id del post
         const userId = request.user._id; // El ID del usuario autenticado
