@@ -2,6 +2,8 @@
 
 This is a RESTful API created to manage users and blog posts. It allows CRUD operations for users and posts, as well as authentication based on JSON Web Tokens (JWT).
 
+The project follows a clean architecture with well-structured use cases, models, and middleware, making it easy to maintain and extend. It is ideal for developers looking to understand the fundamentals of building a robust backend service using modern web development practices.
+
 ## 📙 Contents
 
 1. [Features](#features)
