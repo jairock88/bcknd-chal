@@ -1,4 +1,4 @@
-# API RESTful de Blog
+# Blog RESTful API
 
 This is a RESTful API created to manage users and blog posts. It allows CRUD operations for users and posts, as well as authentication based on JSON Web Tokens (JWT).
 
