@@ -4,6 +4,8 @@ This is a RESTful API created to manage users and blog posts. It allows CRUD ope
 
 The project follows a clean architecture with well-structured use cases, models, and middleware, making it easy to maintain and extend. It is ideal for developers looking to understand the fundamentals of building a robust backend service using modern web development practices.
 
+**Deploy test:** https://bcknd-chal.onrender.com
+
 ## 📙 Contents
 
 1. [Features](#features)
