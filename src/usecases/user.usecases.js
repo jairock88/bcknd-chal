@@ -89,6 +89,17 @@ async function deleteUserById(id) {
   }
 }
 
+async function getUserCount() {
+  try {
+    console.log("Counting users...");
+    const userCount = await User.countDocuments(); // Cuenta los documentos en la colección User
+    console.log("User count retrieved:", userCount);
+    return userCount;
+  } catch (error) {
+    throw new Error("Error getting user count: " + error.message);
+  }
+}
+
 module.exports = {
   login,
   signUp,
@@ -97,4 +108,5 @@ module.exports = {
   getById,
   updateUserById,
   deleteUserById,
+  getUserCount,
 };

@@ -25,6 +25,24 @@ router.post("/login", async (request, response) => {
   }
 });
 
+router.get("/count", async (req, res) => {
+  try {
+    console.log("Request received for /count");
+    const userCount = await userUseCases.getUserCount();
+    console.log("User count:", userCount);
+    res.json({
+      success: true,
+      data: { count: userCount },
+    });
+  } catch (error) {
+    console.error("Error in /count route:", error);
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
 // Signup route localhost:port/signup
 router.post("/signup", async (request, response) => {
   try {
